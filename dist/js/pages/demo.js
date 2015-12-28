@@ -86,11 +86,6 @@ $("#calendar").datepicker();
 //- MONTHLY SALES CHART -
 //-----------------------
 
-// Get context with jQuery - using jQuery's .get() method.
-var salesChartCanvas = $("#salesChart").get(0).getContext("2d");
-// This will get the first returned node in the jQuery collection.
-var salesChart = new Chart(salesChartCanvas);
-
 var salesChartData = {
 labels: ["January", "February", "March", "April", "May", "June", "July"],
 datasets: [
@@ -117,7 +112,7 @@ data: [28, 48, 40, 19, 86, 27, 90]
 ]
 };
     
-var salesChartOptions = {
+var lineChartOptions = {
 //Boolean - If we should show the scale at all
 showScale: true,
 //Boolean - Whether grid lines are shown across the chart
@@ -158,23 +153,19 @@ responsive: true,
 multiTooltipTemplate: "<%= datasetLabel %> - <%= value %>",
 };
 
-//Create the line chart
-salesChart.Line(salesChartData, salesChartOptions);
 
 //---------------------------
 //- END MONTHLY SALES CHART -
 //---------------------------
-
-
-
+    
+    
+    
+    
+    
     //-----------------------
     //- MONTHLY SALES CHART -
     //-----------------------
 
-    // Get context with jQuery - using jQuery's .get() method.
-    var nUserChartCanvas = $("#nUserChart").get(0).getContext("2d");
-    // This will get the first returned node in the jQuery collection.
-    var nUserChart = new Chart(nUserChartCanvas);
 
     var nUserChartData = {
         labels: ["January", "February", "March", "April", "May", "June", "July"],
@@ -187,7 +178,7 @@ salesChart.Line(salesChartData, salesChartOptions);
                 pointStrokeColor: "#c1c7d1",
                 pointHighlightFill: "#fff",
                 pointHighlightStroke: "rgb(220,220,220)",
-                data: [65, 90, 120, 60, 250, 70, 500]
+                data: [65, 90, 120, 60, 250, 90, 500]
             },
             {
                 label: "Users",
@@ -202,54 +193,21 @@ salesChart.Line(salesChartData, salesChartOptions);
         ]
     };
 
-    var nUserChartOptions = {
-        //Boolean - If we should show the scale at all
-        showScale: true,
-        //Boolean - Whether grid lines are shown across the chart
-        scaleShowGridLines: false,
-        //String - Colour of the grid lines
-        scaleGridLineColor: "rgba(0,0,0,.05)",
-        //Number - Width of the grid lines
-        scaleGridLineWidth: 1,
-        //Boolean - Whether to show horizontal lines (except X axis)
-        scaleShowHorizontalLines: true,
-        //Boolean - Whether to show vertical lines (except Y axis)
-        scaleShowVerticalLines: true,
-        //Boolean - Whether the line is curved between points
-        bezierCurve: true,
-        //Number - Tension of the bezier curve between points
-        bezierCurveTension: 0.3,
-        //Boolean - Whether to show a dot for each point
-        pointDot: false,
-        //Number - Radius of each point dot in pixels
-        pointDotRadius: 4,
-        //Number - Pixel width of point dot stroke
-        pointDotStrokeWidth: 1,
-        //Number - amount extra to add to the radius to cater for hit detection outside the drawn point
-        pointHitDetectionRadius: 20,
-        //Boolean - Whether to show a stroke for datasets
-        datasetStroke: true,
-        //Number - Pixel width of dataset stroke
-        datasetStrokeWidth: 2,
-        //Boolean - Whether to fill the dataset with a color
-        datasetFill: true,
-        //String - A legend template
-        legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].lineColor%>\"></span><%=datasets[i].label%></li><%}%></ul>",
-        //Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
-        maintainAspectRatio: true,
-        //Boolean - whether to make the chart responsive to window resizing
-        responsive: true,
-        //String - Show label
-        multiTooltipTemplate: "<%= datasetLabel %> - <%= value %>",
-    };
+    var ctx1 = $("#myChart1").get(0).getContext("2d");
+    var myLineChart1 = new Chart(ctx1).Line(salesChartData, lineChartOptions);
 
-    //Create the line chart
-    nUserChart.Line(nUserChartData, nUserChartOptions);
+    var ctx2 = $("#myChart2").get(0).getContext("2d");
+    var myLineChart2;
 
-    //---------------------------
-    //- END MONTHLY SALES CHART -
-    //---------------------------
+    $('#tabnew').on('shown.bs.tab', function (e) {
+        myLineChart2.destroy();
+        myLineChart1 = new Chart(ctx1).Line(salesChartData, lineChartOptions);
+    });
 
+    $('#tabtotal').on('shown.bs.tab', function (e) {
+        myLineChart1.destroy();
+        myLineChart2 = new Chart(ctx2).Line(nUserChartData, lineChartOptions);
+    });
 
     
 //-------------

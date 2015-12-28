@@ -236,29 +236,29 @@
           <!-- Main row -->
           <div class="row">
             <!-- Left col -->
-            <section class="col-lg-7 connectedSortable">
+            <section class="col-lg-6 connectedSortable">
               <!-- Custom tabs (Charts with tabs)-->
               <div class="nav-tabs-custom">
                 <!-- Tabs within a box -->
-                <ul class="nav nav-tabs pull-right">
-                  <li class="active"><a href="#1" data-toggle="tab">Total</a></li>
-                  <li><a href="#2" data-toggle="tab">New</a></li>
+                <ul class="nav nav-tabs pull-right" role="tablist">
+                    <li><a id="tabnew" href="#chart1" role="tab" data-toggle="tab">New</a></li>
+                    <li class="active"><a id="tabtotal" href="#chart2" role="tab" data-toggle="tab">Total</a></li>
                   <li class="pull-left header"><i class="fa fa-inbox"></i> User - Device</li>
                 </ul>
                 <div class="tab-content no-padding">
                   <!-- ChartJs - User-Device -->    
-                    <div id="1" class="chart tab-pane active">
-                        <canvas id="salesChart" style="position: relative; height:300px"></canvas></div>
-                    <div id="2" class="chart tab-pane">
-                        <canvas id="nUserChart" style="height:300px"></canvas>
+                    <div class="tab-pane active" id="chart2">
+                        <canvas id="myChart1" style="position: relative; height:300px"></canvas>
                     </div>
+                    <div class="tab-pane" id="chart1">
+                        <canvas id="myChart2" style="position: relative; height:300px" ></canvas>
                     </div>
               </div>
                 <!-- /.nav-tabs-custom -->
-                
+                </div>
             </section><!-- /.Left col -->
             <!-- right col (We are only adding the ID to make the widgets sortable)-->
-            <section class="col-lg-5 connectedSortable">
+            <section class="col-lg-6 connectedSortable">
 
               <!-- Map box -->
               <div class="box box-solid bg-light-blue-gradient">
