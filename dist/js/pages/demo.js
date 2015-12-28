@@ -199,12 +199,12 @@ multiTooltipTemplate: "<%= datasetLabel %> - <%= value %>",
     var ctx2 = $("#myChart2").get(0).getContext("2d");
     var myLineChart2;
 
-    $('#tabnew').on('shown.bs.tab', function (e) {
+    $('#tab1').on('shown.bs.tab', function (e) {
         myLineChart2.destroy();
         myLineChart1 = new Chart(ctx1).Line(salesChartData, lineChartOptions);
     });
 
-    $('#tabtotal').on('shown.bs.tab', function (e) {
+    $('#tab2').on('shown.bs.tab', function (e) {
         myLineChart1.destroy();
         myLineChart2 = new Chart(ctx2).Line(nUserChartData, lineChartOptions);
     });
