@@ -189,7 +189,7 @@
                 <div class="icon">
                   <i class="ion ion-ipad"></i>
                 </div>
-                <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="devicedata.html" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
               </div>
             </div><!-- ./col -->
             <div class="col-lg-3 col-xs-6">
@@ -202,7 +202,7 @@
                 <div class="icon">
                     <i class="ion ion-person-stalker"></i>
                 </div>
-                <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="userdata.html" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
               </div>
             </div><!-- ./col -->
             <div class="col-lg-3 col-xs-6">
@@ -215,7 +215,7 @@
                 <div class="icon">
                     <i class="ion ion-arrow-swap"></i>
                 </div>
-                <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="filedata.html" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
               </div>
             </div><!-- ./col -->
             <div class="col-lg-3 col-xs-6">
@@ -255,7 +255,26 @@
               </div>
                 <!-- /.nav-tabs-custom -->
                 </div>
+                <!--File Transfer-->
+                <div class="nav-tabs-custom">
+                    <ul class="nav nav-tabs pull-right" role="tablist">
+                        <li class="active"><a id="tab3" href="#bar" role="tab" data-toggle="tab">Total</a></li>
+                        <li><a id="tab4" href="#pie" role="tab" data-toggle="tab">Types</a></li>
+                    <li class="pull-left header"><i class="fa fa-cloud"></i>File Transferred</li>
+                    </ul>
+                    <div class="tab-content no-padding">
+                        <!--ChartJs - Bar & Pie-->
+                        <div class="tab-pane active" id="bar">
+                            <canvas id="barchart" style="position: relative; height:300x"></canvas>
+                        </div>
+                        <div class="tab-pane" id="pie">
+                            <canvas id="piechart" style="position: relative; height:300x"></canvas>
+                        </div>
+                    </div>
+                </div>
+                
             </section><!-- /.Left col -->
+        
             <!-- right col (We are only adding the ID to make the widgets sortable)-->
             <section class="col-lg-6 connectedSortable">
 
@@ -280,7 +299,7 @@
               <!-- /.box -->
 
             </section><!-- right col -->
-          </div><!-- /.row (main row) -->
+          </div><!-- /.row (1st row) -->
 
         </section><!-- /.content -->
       </div><!-- /.content-wrapper -->
