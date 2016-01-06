@@ -90,7 +90,7 @@ var salesChartData = {
 labels: ["January", "February", "March", "April", "May", "June", "July"],
 datasets: [
 {
-label: "Devices",
+label: "Active",
 fillColor: "rgb(210, 214, 222)",
 strokeColor: "rgb(210, 214, 222)",
 pointColor: "rgb(210, 214, 222)",
@@ -100,7 +100,7 @@ pointHighlightStroke: "rgb(220,220,220)",
 data: [65, 90, 120, 60, 250, 70, 300]
 },
 {
-label: "Users",
+label: "New",
 fillColor: "rgba(60,141,188,0.9)",
 strokeColor: "rgba(60,141,188,0.8)",
 pointColor: "#3b8bba",
@@ -168,10 +168,10 @@ multiTooltipTemplate: "<%= datasetLabel %> - <%= value %>",
 
 
     var nUserChartData = {
-        labels: ["January", "February", "March", "April", "May", "June", "July"],
+        labels: ["Sunday", "Monday", "Tuesday", "Wednessday", "Thursday", "Friday", "Saturday"],
         datasets: [
             {
-                label: "Devices",
+                label: "Active",
                 fillColor: "rgb(210, 214, 222)",
                 strokeColor: "rgb(210, 214, 222)",
                 pointColor: "rgb(210, 214, 222)",
@@ -181,7 +181,7 @@ multiTooltipTemplate: "<%= datasetLabel %> - <%= value %>",
                 data: [65, 90, 120, 60, 250, 90, 500]
             },
             {
-                label: "Users",
+                label: "New",
                 fillColor: "rgba(60,141,188,0.9)",
                 strokeColor: "rgba(60,141,188,0.8)",
                 pointColor: "#3b8bba",
